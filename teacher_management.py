@@ -255,8 +255,8 @@ class TeacherManagement:
         self.view_window.resizable(False, False)
 
         # Center the window on the screen
-        window_width = 310
-        window_height = 260
+        window_width = 200
+        window_height = 220
         screen_width = self.view_window.winfo_screenwidth()
         screen_height = self.view_window.winfo_screenheight()
         position_top = int(screen_height / 2 - window_height / 2)
