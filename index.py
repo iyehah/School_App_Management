@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import ttk
 import dashboard
 import student_management
-import results_management  # Updated import
 import teacher_management
 import classroom_management
 import settings  # Import the settings module
@@ -17,8 +16,12 @@ class SchoolManagementSystem:
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
 
-        # Set window size to the screen dimensions
-        self.root.geometry(f"{screen_width}x{screen_height}")
+        # Set window size to be smaller than the screen size
+        self.root.geometry(f"800x600")  # You can set a fixed size here if needed
+
+        # Prevent resizing beyond the screen size
+        self.root.maxsize(screen_width, screen_height)
+        self.root.minsize(800, 600)  # Minimum size to prevent shrinking too small
 
         # Configure the style for the notebook and tabs
         style = ttk.Style()
@@ -47,7 +50,7 @@ class SchoolManagementSystem:
         self.notebook.add(self.student_management_frame, text="Student Management")
         self.notebook.add(self.teacher_management_frame, text="Teacher Management")
         self.notebook.add(self.classroom_management_frame, text="Classroom Management")
-        self.notebook.add(self.results_management_frame, text="Results Management")  # Updated tab label
+        self.notebook.add(self.results_management_frame, text="Results Management *")  # Updated tab label
         self.notebook.add(self.settings_frame, text="Settings")
 
         # Initialize the UI for each tab
@@ -55,7 +58,7 @@ class SchoolManagementSystem:
         student_management.StudentManagement(self.student_management_frame)
         teacher_management.TeacherManagement(self.teacher_management_frame)
         classroom_management.ClassroomManagement(self.classroom_management_frame)
-        results_management.ResultsManagement(self.results_management_frame)  # Updated class name
+        # results_management.ResultsManagement(self.results_management_frame)  # Updated class name
         settings.Settings(self.settings_frame)  # Initialize the Settings UI
 
         # Bind the close event to the exit function
