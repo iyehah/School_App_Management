@@ -20,18 +20,19 @@ class Dashboard:
 
     def configure_styles(self):
         style = ttk.Style()
-        
+        background = colors('red')
+        color = colors("white")
         # Define custom styles for each card with different background colors
-        style.configure('Card1.TFrame', background=colors('blue'))
-        style.configure('Card2.TFrame', background='#36C2CE')
-        style.configure('Card3.TFrame', background='#36C2CE')
-        style.configure('Card4.TFrame', background='#36C2CE')
-        style.configure('Card5.TFrame', background='#36C2CE')
-        style.configure('Card6.TFrame', background='#36C2CE')
+        style.configure('Card1.TFrame', background=background)
+        style.configure('Card2.TFrame', background=background)
+        style.configure('Card3.TFrame', background=background)
+        style.configure('Card4.TFrame', background=background)
+        style.configure('Card5.TFrame', background=background)
+        style.configure('Card6.TFrame', background=background)
 
         # Configure text colors for card labels
-        style.configure('CardTitle.TLabel', background='#36C2CE', foreground='white', font=('Arial', 14))
-        style.configure('CardValue.TLabel', background='#36C2CE', foreground='white', font=('Arial', 18, 'bold'))
+        style.configure('CardTitle.TLabel', background=background, foreground=color, font=('Arial', 14))
+        style.configure('CardValue.TLabel', background=background, foreground=color, font=('Arial', 18, 'bold'))
 
     def create_content_cards(self):
         # Frame for content cards
