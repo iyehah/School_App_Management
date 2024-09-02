@@ -1,2 +1,3 @@
 # School_App_Management
 ...
+> Hi there this is our app for school management
